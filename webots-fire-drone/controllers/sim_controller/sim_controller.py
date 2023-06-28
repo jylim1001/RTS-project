@@ -401,23 +401,23 @@ if __name__ == '__main__':
             # capture state
             image, sensors, angles, north_deg = controller.get_state()
             
-            # if(show):
-            #     image = cv2.resize(image,(960,540))
-            #     blur = cv2.GaussianBlur(image,(21,21),0)
-            #     blur32 = np.float32(blur)
-            #     hsv = cv2.cvtColor(blur32,cv2.COLOR_BGR2HSV)
-            #     lower = [18,50,50]
-            #     upper = [35,255,255]
-            #     lower = np.array(lower,dtype="uint8")
-            #     upper = np.array(upper,dtype="uint8")
-            #     mask = cv2.inRange(hsv, lower, upper)
-            #     output = cv2.bitwise_and(image,hsv,mask=mask)
-            #     no_red = cv2.countNonZero(mask)
-            #     if int(no_red) >1000:
-            #         print("Fire detected at coordinate ")
-            #         print(np.array(controller.drone_node.getPosition()))
-            #     cv2.imshow("Drone's live view", image)
-            #     cv2.waitKey(1)
+            if(show):
+                 image = cv2.resize(image,(960,540))
+                 blur = cv2.GaussianBlur(image,(21,21),0)
+                 blur32 = np.float32(blur)
+                 hsv = cv2.cvtColor(blur32,cv2.COLOR_BGR2HSV)
+                 lower = [18,50,50]
+                 upper = [35,255,255]
+                 lower = np.array(lower,dtype="uint8")
+                 upper = np.array(upper,dtype="uint8")
+                 mask = cv2.inRange(hsv, lower, upper)
+                 output = cv2.bitwise_and(image,hsv,mask=mask)
+                 no_red = cv2.countNonZero(mask)
+                 if int(no_red) >1000:
+                     print("Fire detected at coordinate ")
+                     print(np.array(controller.drone_node.getPosition()))
+                 cv2.imshow("Drone's live view", image)
+                 cv2.waitKey(1)
 
             while key > 0:
                 # roll
