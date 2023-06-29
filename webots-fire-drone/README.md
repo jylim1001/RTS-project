@@ -1,7 +1,7 @@
 # Webots Forest Fire Detector Drone
 
 WIF3008 Real Time System group project
-Semester TT 2022/2023
+Semester II 2022/2023
 
 ### Steps to run the simulation
 This system is built for Webots version R2020b and Python 3.8
